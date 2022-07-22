@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Mailer settings
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'rails-photoapp.herokuapp.com', port: 3000, protocol: 'https' }
+  config.action_mailer.default_url_options = { host: 'rails-photoapp.herokuapp.com', protocol: 'https' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
