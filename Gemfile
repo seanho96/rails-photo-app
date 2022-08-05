@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
+gem 'stripe'
 gem 'twitter-bootstrap-rails'
 
 # Use Active Storage variant
