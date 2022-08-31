@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_805_041_347) do
-  create_table 'payments', force: :cascade do |t|
+ActiveRecord::Schema.define(version: 20_220_831_075_546) do
+  create_table 'card_details', force: :cascade do |t|
     t.string 'email'
     t.string 'token'
     t.integer 'user_id'

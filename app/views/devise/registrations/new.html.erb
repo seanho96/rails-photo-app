@@ -4,7 +4,7 @@
 
 <h1><%= t('.sign_up') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)), class: 'cc_form' do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { class: 'cc_form' }) do |f| %>
   <%= bootstrap_devise_error_messages! %>
 
   <div class="form-group">
@@ -26,7 +26,7 @@
     <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
   </div>
 
-  <%= fields_for( :payment ) do |field| %>
+  <%= fields_for( :card_detail ) do |field| %>
     <div class="row col-md-12">
       <div class="form-group col-md-4 no-left-padding">
         <%= field.label :card_number, "Card Number", data: { stripe: 'label'} %>
@@ -41,13 +41,13 @@
           <%= field.label :card_expires, "Card Expires", data: { stripe: 'label'} %>
         </div>
         <div class="col-md-3">
-          <%= field.select :card_expires_month, options_for_select(Payment.month_options),
+          <%= field.select :card_expires_month, options_for_select(CardDetail.month_options),
           { include_blank: 'Month' },
           "data-stripe" => "exp-month",
           class: "form-control", required: true %>
         </div>
         <div class="col-md-3">
-          <%= field.select :card_expires_year, options_for_select(Payment.year_options.push),
+          <%= field.select :card_expires_year, options_for_select(CardDetail.year_options.push),
           { include_blank: 'Year' },
           class: "form-control",
           data: { stripe: "exp-year" }, required: true %>

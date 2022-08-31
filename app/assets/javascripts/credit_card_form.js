@@ -30,7 +30,7 @@ $(document).on("ready turbolinks:load", function () {
     } else {
       token = response.id;
       $form.append(
-        $('<input type="hidden" name="payment[token]" />').val(token)
+        $('<input type="hidden" name="card_detail[token]" />').val(token)
       );
       $("[data-stripe=number]").remove();
       $("[data-stripe=cvc]").remove();
