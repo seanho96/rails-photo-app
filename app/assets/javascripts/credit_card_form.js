@@ -20,15 +20,14 @@ $(document).on("ready turbolinks:load", function () {
   $(".cc_form").on("submit", submitHandler);
 
   stripeResponseHandler = function (status, response) {
-    let token, $form;
-    $form = $(".cc_form");
+    const $form = $(".cc_form");
 
     if (response.error) {
       console.log(response.error.message);
       show_error(response.error.message);
       $form.find("input[type=submit]").prop("disabled", false);
     } else {
-      token = response.id;
+      const token = response.id;
       $form.append(
         $('<input type="hidden" name="card_detail[token]" />').val(token)
       );
